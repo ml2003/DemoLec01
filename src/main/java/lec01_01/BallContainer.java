@@ -4,10 +4,7 @@
 package lec01_01;
 
 import java.lang.Iterable;
-import java.util.Set;
-import java.util.LinkedHashSet;
-import java.util.Iterator;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * This is a container can be used to contain balls.
@@ -54,7 +51,11 @@ public class BallContainer implements Iterable<Ball> {
      */
     public boolean add(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+    if (b !=null ) {
+       contents.add(b);
+    return true;}
+    else
+         return false;
     }
 
     /**
@@ -79,8 +80,12 @@ public class BallContainer implements Iterable<Ball> {
      * @return the volume of the contents of the container
      */
     public double getVolume() {
-        // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        double total=0;
+        for (Ball iBall: contents
+             ) { total+=iBall.getVolume();
+
+        }
+        return total;
     }
 
     /**
@@ -117,8 +122,14 @@ public class BallContainer implements Iterable<Ball> {
      */
     public void clear() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        if (contents !=null)
+        {
+         contents.clear();
+        }
     }
+
+
+
 
     /**
      * This method returns <tt>true</tt> if this container contains
@@ -128,8 +139,8 @@ public class BallContainer implements Iterable<Ball> {
      * false otherwise.
      */
     public boolean contains(Ball b) {
-        // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+     if (contents.equals(b)) {return true;}
+     return false;
     }
 
 }
