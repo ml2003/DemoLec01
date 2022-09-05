@@ -11,12 +11,12 @@ import java.util.Iterator;
  * difference between a BallContainer and a Box is that a Box has a
  * finite volume. Once a box is full, a client cannot put in more Balls.
  */
-public class Box implements Iterable<lec01_01.Ball> {
+public class Box implements Iterable<Ball> {
 
     /**
      * ballContainer is used to internally store balls for this Box
      */
-    private lec01_01.BallContainer ballContainer;
+    private BallContainer ballContainer;
 
     /**
      * Constructor that creates a new box.
@@ -32,7 +32,7 @@ public class Box implements Iterable<lec01_01.Ball> {
      * @return an Iterator over the Ball objects contained
      * in this box.
      */
-    public Iterator<lec01_01.Ball> iterator() {
+    public Iterator<Ball> iterator() {
         return ballContainer.iterator();
     }
 
@@ -50,7 +50,7 @@ public class Box implements Iterable<lec01_01.Ball> {
      * already full. Returns false, if the ball is already in the box or
      * if the box is too full to fit the new ball.
      */
-    public boolean add(lec01_01.Ball b) {
+    public boolean add(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
         throw new RuntimeException("Method not implemented");
     }
@@ -62,7 +62,7 @@ public class Box implements Iterable<lec01_01.Ball> {
      * @return an iterator that returns all balls in this box in
      * ascending order by Ball size.
      */
-    public Iterator<lec01_01.Ball> getBallsFromSmallest() {
+    public Iterator<Ball> getBallsFromSmallest() {
         // Your code goes here.  Remove the exception after you're done.
         throw new RuntimeException("Method not implemented");
     }
@@ -78,7 +78,7 @@ public class Box implements Iterable<lec01_01.Ball> {
      * i.e., the ball was actually in the box. Returns false, if the ball is not
      * in the box.
      */
-    public boolean remove(lec01_01.Ball b) {
+    public boolean remove(Ball b) {
         return ballContainer.remove(b);
     }
 
@@ -113,7 +113,7 @@ public class Box implements Iterable<lec01_01.Ball> {
      * @return true if this box contains the specified Ball. Returns
      * false otherwise.
      */
-    public boolean contains(lec01_01.Ball b) {
+    public boolean contains(Ball b) {
         return ballContainer.contains(b);
     }
 

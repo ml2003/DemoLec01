@@ -13,16 +13,16 @@ import java.util.Collections;
  * This is a container can be used to contain balls.
  * A given ball may only appear in a BallContainer once.
  */
-public class BallContainer implements Iterable<lec01_01.Ball> {
+public class BallContainer implements Iterable<Ball> {
 
     // Contents of the BallContainer.
-    private Set<lec01_01.Ball> contents;
+    private Set<Ball> contents;
 
     /**
      * Constructor that creates a new ball container.
      */
     public BallContainer() {
-        contents = new LinkedHashSet<lec01_01.Ball>();
+        contents = new LinkedHashSet<Ball>();
     }
 
     /**
@@ -30,7 +30,7 @@ public class BallContainer implements Iterable<lec01_01.Ball> {
      * @return an Iterator over the Ball objects contained
      * in this container
      */
-    public Iterator<lec01_01.Ball> iterator() {
+    public Iterator<Ball> iterator() {
         // If we just returned the iterator of "contents", a client
         // could call the remove() method on the iterator and modify
         // it behind our backs.  Instead, we wrap contents in an
@@ -52,7 +52,7 @@ public class BallContainer implements Iterable<lec01_01.Ball> {
      * i.e., the ball was not already in the container. Returns false, if the ball is
      * already in the container
      */
-    public boolean add(lec01_01.Ball b) {
+    public boolean add(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
         throw new RuntimeException("Method not implemented");
     }
@@ -68,7 +68,7 @@ public class BallContainer implements Iterable<lec01_01.Ball> {
      * i.e., the ball was actually in the container. Returns false, if the ball is not
      * in the container
      */
-    public boolean remove(lec01_01.Ball b) {
+    public boolean remove(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
         throw new RuntimeException("Method not implemented");
     }
@@ -127,7 +127,7 @@ public class BallContainer implements Iterable<lec01_01.Ball> {
      * @return true if this container contains the specified ball. Returns
      * false otherwise.
      */
-    public boolean contains(lec01_01.Ball b) {
+    public boolean contains(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
         throw new RuntimeException("Method not implemented");
     }
