@@ -4,7 +4,7 @@
 package lec01_01;
 
 import java.lang.Iterable;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * This is a container that can be used to contain Balls. The key
@@ -17,14 +17,15 @@ public class Box implements Iterable<Ball> {
      * ballContainer is used to internally store balls for this Box
      */
     private BallContainer ballContainer;
-
+    private final double volume;
     /**
      * Constructor that creates a new box.
      * @param maxVolume Total volume of balls that this box can contain.
      */
     public Box(double maxVolume) {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        this.ballContainer = new BallContainer();
+        this.volume = maxVolume;
     }
 
     /**
@@ -52,7 +53,10 @@ public class Box implements Iterable<Ball> {
      */
     public boolean add(Ball b) {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        if (this.volume >= (this.ballContainer.getVolume() + b.getVolume())) {
+            return ballContainer.add(b);
+        }
+        return false;
     }
 
     /**
@@ -64,7 +68,22 @@ public class Box implements Iterable<Ball> {
      */
     public Iterator<Ball> getBallsFromSmallest() {
         // Your code goes here.  Remove the exception after you're done.
-        throw new RuntimeException("Method not implemented");
+        List<Ball> sortedBalls = new ArrayList<>();
+        for (Ball b : ballContainer) {
+            sortedBalls.add(b);
+        }
+        Collections.sort(sortedBalls, new Comparator<Ball>() {
+            @Override
+            public int compare(Ball o1, Ball o2) {
+                if (o1.getVolume() < o2.getVolume()) {
+                    return -1;
+                } else if (o1.getVolume() == o2.getVolume()) {
+                    return 0;
+                } else {
+                    return 1;}
+            }
+        });
+        return sortedBalls.iterator();
     }
 
     /**
